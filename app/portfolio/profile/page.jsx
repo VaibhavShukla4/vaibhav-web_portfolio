@@ -233,11 +233,13 @@ const page = ({
             </div>
           </div>
         </div>
-        <div class="w-[70vw]" ref={section2Ref} id="section2">
-          <h4 class={`text-white poppins text-[24px] text-end`}>Experience</h4>
-          <div class="w-full flex py-[20px] rounded-lg">
-            <div class="bg-[#7733FF] w-[70%] h-2"></div>
-            <div class="bg-[#F7A21E] w-[30%] h-2"></div>
+        <div className="w-[70vw]" ref={section2Ref} id="section2">
+          <h4 className={`text-white poppins text-[24px] text-end`}>
+            Experience
+          </h4>
+          <div className="w-full flex py-[20px] rounded-lg">
+            <div className="bg-[#7733FF] w-[70%] h-2"></div>
+            <div className="bg-[#F7A21E] w-[30%] h-2"></div>
           </div>
           <div className="flex flex-wrap justify-evenly items-center  max-[767px]:justify-center gap-x-6 gap-y-6 w-full py-8">
             <button className="project-btn" onClick={() => setFormate(true)}>
@@ -248,7 +250,7 @@ const page = ({
             </button>
           </div>
           {formate ? (
-            <div class="flex justify-center relative max-[1380px]:flex-col">
+            <div className="flex justify-center relative max-[1380px]:flex-col">
               <div className="absolute top-[168px] z-[1] max-[1380px]:left-[-42px]">
                 <Image
                   className="w-[90px] rounded-full bg-[#2C2F38] p-3"
@@ -314,7 +316,7 @@ const page = ({
               </div>
             </div>
           ) : (
-            <div class="flex justify-center relative max-[1380px]:flex-col">
+            <div className="flex justify-center relative max-[1380px]:flex-col">
               <div className="absolute top-[168px] z-[1] max-[1380px]:left-[-42px]">
                 <Image
                   className="w-[90px] rounded-full bg-[#2C2F38] p-3"
@@ -383,13 +385,13 @@ const page = ({
             </div>
           )}
         </div>
-        <div class="w-[70vw]" ref={section1Ref} id="section1">
-          <h4 class={`text-white poppins text-[24px] text-start`}>
+        <div className="w-[70vw]" ref={section1Ref} id="section1">
+          <h4 className={`text-white poppins text-[24px] text-start`}>
             Contact Me
           </h4>
-          <div class="w-full flex py-[20px] rounded-lg">
-            <div class="bg-[#7733FF] w-[70%] h-2"></div>
-            <div class="bg-[#F7A21E] w-[30%] h-2"></div>
+          <div className="w-full flex py-[20px] rounded-lg">
+            <div className="bg-[#7733FF] w-[70%] h-2"></div>
+            <div className="bg-[#F7A21E] w-[30%] h-2"></div>
           </div>
           <div className="flex justify-center items-center py-[100px]">
             <div className="flex justify-center flex-wrap gap-x-[90px] gap-y-8 w-full">

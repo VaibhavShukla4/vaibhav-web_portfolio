@@ -3,23 +3,36 @@
 import React, { useState } from 'react';
 import Pages from '@/app/pages/Index';
 
+// Custom throttle function
+const throttle = (func, delay) => {
+  let lastCall = 0;
+  return (...args) => {
+    const now = new Date().getTime();
+    if (now - lastCall < delay) {
+      return;
+    }
+    lastCall = now;
+    return func(...args);
+  };
+};
+
 const CursorFollower = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isClicked, setIsClicked] = useState(false);
-  // Updates the position state with the current mouse position
-  const handleMouseMove = (e) => {
-    setPosition({
-      x: e.clientX, // Mouse X position relative to the viewport
-      y: e.clientY, // Mouse Y position relative to the viewport
-    });
-  };
 
-  // Trigger click effect animation
+  // Throttled version of handleMouseMove
+  const handleMouseMove = throttle((e) => {
+    setPosition({
+      x: e.clientX,
+      y: e.clientY,
+    });
+  }, 50); // Delay of 50ms
+
   const handleMouseClick = () => {
-    setIsClicked(true); // Set the click state to true to trigger the animation
+    setIsClicked(true);
     setTimeout(() => {
-      setIsClicked(false); // Reset the click state after the animation
-    }, 300); // Duration of the click animation (e.g., 300ms)
+      setIsClicked(false);
+    }, 300);
   };
 
   return (
@@ -27,26 +40,23 @@ const CursorFollower = () => {
       className="relative"
       onMouseMove={handleMouseMove}
       onClick={handleMouseClick}
-      // Tracks the mouse movement
     >
-      <Pages /> {/* Main content of your page */}
-      {/* Cursor follower */}
+      <Pages />
       <div
         className={`cursor-follower ${isClicked ? 'clicked' : ''}`}
         style={{
-          position: 'fixed', // Fixed so that it follows the cursor within the viewport
+          position: 'fixed',
           left: `${position.x}px`,
           top: `${position.y}px`,
           width: '20px',
           height: '20px',
           borderRadius: '50%',
-          pointerEvents: 'none', // Avoids blocking interactions with other elements
-          zIndex: 9999, // Ensures the follower stays on top of other elements
-          pointerEvents: 'none', // Avoid blocking interactions
-          transition: 'left 0.2s ease-out, top 0.1s ease-out', // Smooth transition for movement
+          pointerEvents: 'none',
+          zIndex: 9999,
+          transition: 'left 0.2s ease-out, top 0.1s ease-out',
         }}
       >
-        <div className={`ball ${isClicked ? 'clicked' : ''}`}></div>
+        <div className="ball"></div>
         <div className="shadow"></div>
       </div>
     </div>
