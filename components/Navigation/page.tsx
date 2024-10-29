@@ -13,12 +13,14 @@ const variants = {
   },
 };
 
-const menuItems = ['Contact', 'Experience', 'About', 'Certificate', 'Projects'];
+// Define the type for menu items (string array)
+const menuItems: string[] = ['Contact', 'Experience', 'About', 'Certificate', 'Projects'];
 
-export const Navigation = () => (
+// Type the component as React.FC
+export const Navigation: React.FC = () => (
   <motion.ul variants={variants}>
-    {menuItems.map((i, index) => (
-      <MenuItem i={i} key={i} />
+    {menuItems.map((item, index) => (
+      <MenuItem i={item} key={index} /> 
     ))}
   </motion.ul>
 );

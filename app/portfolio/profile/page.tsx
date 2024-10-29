@@ -1,7 +1,7 @@
 /** @format */
 'use client';
 import Image from 'next/image';
-import React, { useRef, useState } from 'react';
+import React, { MutableRefObject, useRef, useState } from 'react';
 import Profile from '@/public/assets/laptop.png';
 import Ai from '@/public/assets/boy.png';
 import Boy from '@/public/assets/boys.png';
@@ -24,7 +24,17 @@ import Languages from '@/components/Languages/page';
 import { poppins } from '@/app/constant';
 import Link from 'next/link';
 
-const page = ({
+// Define the interface for the props
+interface PageProps {
+  handleScroll: (ref: MutableRefObject<HTMLDivElement | null>) => void;
+  section1Ref: MutableRefObject<HTMLDivElement | null>;
+  section2Ref: MutableRefObject<HTMLDivElement | null>;
+  section3Ref: MutableRefObject<HTMLDivElement | null>;
+  section4Ref: MutableRefObject<HTMLDivElement | null>;
+  section5Ref: MutableRefObject<HTMLDivElement | null>;
+}
+
+const Page: React.FC<PageProps> = ({
   handleScroll,
   section1Ref,
   section2Ref,
@@ -32,11 +42,9 @@ const page = ({
   section4Ref,
   section5Ref,
 }) => {
-  // const { section1Ref } = childrenWithProps;
-  const images = [Linkedin, Relevel, Scaler];
+ const images = [Linkedin, Relevel, Scaler];
   const languages = [Next, ReactJs, Vue, Node, Tailwind, Css, Html, Javascript];
-  const [formate, setFormate] = useState(false);
-
+  const [formate, setFormate] = useState<boolean>(false);
   return (
     <div>
       <div className="flex flex-col items-center justify-center pt-24 pb-[40px] overflow-auto">
@@ -422,4 +430,4 @@ const page = ({
   );
 };
 
-export default React.memo(page);
+export default React.memo(Page);

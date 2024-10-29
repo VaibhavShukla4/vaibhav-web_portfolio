@@ -2,10 +2,13 @@
 
 import { useState, useEffect } from 'react';
 
-export function useDimension(ref) {
+// Type the ref and the return value of the hook
+export function useDimension(ref: React.RefObject<HTMLElement>) {
+  // Typing dimensions as an object with width and height both as numbers
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
+    // Function to update dimensions
     function updateDimensions() {
       if (ref.current) {
         setDimensions({
@@ -21,7 +24,7 @@ export function useDimension(ref) {
     return () => {
       window.removeEventListener('resize', updateDimensions); // Clean up on unmount
     };
-  }, [ref]);
+  }, [ref]); // Effect depends on ref
 
-  return dimensions;
+  return dimensions; // Returning the dimensions (width and height)
 }

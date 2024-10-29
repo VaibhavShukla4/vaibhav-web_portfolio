@@ -4,23 +4,35 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import Left from '@/public/assets/svg/left.svg';
 import Right from '@/public/assets/svg/right.svg';
-const Carousel = ({ images }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
 
-  const goToPrevious = () => {
+// Define the interface for the image type
+interface ImageType {
+  src: string;
+  width: number;
+  height: number;
+}
+
+interface CarouselProps {
+  images: ImageType[];
+}
+
+const Carousel: React.FC<CarouselProps> = ({ images }) => {
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+
+  const goToPrevious = (): void => {
     const isFirstSlide = currentIndex === 0;
     const newIndex = isFirstSlide ? images.length - 1 : currentIndex - 1;
     setCurrentIndex(newIndex);
   };
 
-  const goToNext = () => {
+  const goToNext = (): void => {
     const isLastSlide = currentIndex === images.length - 1;
     const newIndex = isLastSlide ? 0 : currentIndex + 1;
     setCurrentIndex(newIndex);
   };
 
   return (
-    <div className="flex justify-center items-center w-full ">
+    <div className="flex justify-center items-center w-full">
       <div className="relative w-full flex overflow-hidden">
         <div
           className="carousel-container relative flex transition-transform ease-in-out duration-500 h-[700px] max-[1024px]:h-full"
@@ -45,8 +57,7 @@ const Carousel = ({ images }) => {
         </div>
         <button
           className="arrow-btn absolute left-0 top-1/2 -translate-y-1/2 px-[10px] py-[14px] max-[767px]:w-[35px] max-[767px]:px-[8px] max-[767px]:py-[10px]
-          max-[425px]:w-[30px] max-[425px]:px-[6px] max-[425px]:py-[8px]
-          "
+          max-[425px]:w-[30px] max-[425px]:px-[6px] max-[425px]:py-[8px]"
           onClick={goToPrevious}
         >
           <Image

@@ -5,10 +5,17 @@ import { motion } from 'framer-motion';
 import { useDimension } from '@/components/useDimension/page';
 import { MenuToggle } from '@/components/MenuToggle/page';
 import { Navigation } from '@/components/Navigation/page';
-const Sidebar = ({ isOpen, toggle }) => {
-  const containerRef = useRef(null);
 
-  // Initialize state with default values that will work server-side
+// Define the prop types for Sidebar
+interface SidebarProps {
+  isOpen: boolean;
+  toggle: () => void; // Function to handle the toggle
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggle }) => {
+  const containerRef = useRef<HTMLElement | null>(null); // Typing useRef for HTMLElement
+
+  // Define the type for sidebarSize state
   const [sidebarSize, setSidebarSize] = useState({
     radius: 30, // default radius
     posX: '90%', // default position X

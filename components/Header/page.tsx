@@ -1,9 +1,20 @@
 /** @format */
-import React, { useState } from 'react';
+import React, { MutableRefObject } from 'react';
 import Sidebar from '@/components/Sidebar/page';
 import { useCycle } from 'framer-motion';
 import Link from 'next/link';
-const Header = ({
+
+// Define the type for props
+interface HeaderProps {
+  handleScroll: (ref: MutableRefObject<HTMLElement | null>) => void;
+  section1Ref: MutableRefObject<HTMLElement | null>;
+  section2Ref: MutableRefObject<HTMLElement | null>;
+  section3Ref: MutableRefObject<HTMLElement | null>;
+  section4Ref: MutableRefObject<HTMLElement | null>;
+  section5Ref: MutableRefObject<HTMLElement | null>;
+}
+
+const Header: React.FC<HeaderProps> = ({
   handleScroll,
   section1Ref,
   section2Ref,
@@ -20,7 +31,7 @@ const Header = ({
           <span onClick={() => handleScroll(section1Ref)}>Contact</span>
         </Link>
         <Link href="#section2" passHref scroll={false} className="shadow-btn ">
-          <span onClick={() => handleScroll(section2Ref)}>Experiance</span>
+          <span onClick={() => handleScroll(section2Ref)}>Experience</span>
         </Link>
         <Link href="#section5" passHref scroll={false} className="shadow-btn ">
           <span onClick={() => handleScroll(section5Ref)}>About</span>

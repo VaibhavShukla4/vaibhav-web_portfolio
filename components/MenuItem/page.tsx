@@ -5,6 +5,12 @@ import { motion } from 'framer-motion';
 import { poppins } from '@/app/constant';
 import Avenger from '@/public/assets/download.gif';
 import Image from 'next/image';
+
+// Define the prop types
+interface MenuItemProps {
+  i: number; // The index number passed as a prop
+}
+
 const variants = {
   open: {
     y: 0,
@@ -24,7 +30,8 @@ const variants = {
 
 const colors = ['#FF008C', '#D309E1', '#9C1AFF', '#7700FF', '#4400FF'];
 
-export const MenuItem = ({ i }) => {
+export const MenuItem: React.FC<MenuItemProps> = ({ i }) => {
+  // Define the style for the border based on the index
   const style = {
     border: `2px solid ${colors[i]}`,
   };
@@ -36,15 +43,11 @@ export const MenuItem = ({ i }) => {
       whileTap={{ scale: 0.95 }}
       className="relative"
     >
-      <span className="icon-placeholder " style={style}></span>
-      {
-        <span
-          className={`background_Image w-[fit-content] transition delay-150 duration-300 ease-in-out  hover:uppercase  ${poppins.className}`}
-          style={style}
-        >
-          {i}
-        </span>
-      }
+      <span
+        className={`background_Image w-[fit-content] transition delay-150 duration-300 ease-in-out hover:uppercase ${poppins.className}`}
+      >
+        {i}
+      </span>
     </motion.li>
   );
 };

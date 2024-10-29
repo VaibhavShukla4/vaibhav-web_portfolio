@@ -1,9 +1,10 @@
 /** @format */
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, SVGMotionProps } from 'framer-motion';
 
-const Path = (props) => (
+// Define the types for Path props
+const Path: React.FC<SVGMotionProps<SVGPathElement>> = (props) => (
   <motion.path
     fill="transparent"
     strokeWidth="3"
@@ -13,7 +14,12 @@ const Path = (props) => (
   />
 );
 
-export const MenuToggle = ({ toggle }) => (
+// Define the type for MenuToggle props
+interface MenuToggleProps {
+  toggle: () => void; // Function to handle toggle
+}
+
+export const MenuToggle: React.FC<MenuToggleProps> = ({ toggle }) => (
   <button
     onClick={toggle}
     className="flex justify-center items-center absolute top-[30px] left-[29px]"
