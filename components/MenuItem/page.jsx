@@ -34,17 +34,16 @@ export const MenuItem = ({ i }) => {
       variants={variants}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
+      className="relative"
     >
-      <div className="icon-placeholder " style={style}></div>
+      <span className="icon-placeholder " style={style}></span>
       {
-        <>
-          <span
-            className={`background_Image w-[fit-content] transition delay-150 duration-300 ease-in-out  hover:uppercase  ${poppins.className}`}
-            style={style}
-          >
-            {i}
-          </span>
-        </>
+        <span
+          className={`background_Image w-[fit-content] transition delay-150 duration-300 ease-in-out  hover:uppercase  ${poppins.className}`}
+          style={style}
+        >
+          {i}
+        </span>
       }
     </motion.li>
   );

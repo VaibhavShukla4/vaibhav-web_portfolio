@@ -1,9 +1,6 @@
 /** @format */
-'use client';
-import Image from 'next/image';
-import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
-import Sidebar from './../Sidebar/page';
+import Sidebar from '@/components/Sidebar/page';
 import { useCycle } from 'framer-motion';
 import Link from 'next/link';
 const Header = ({
@@ -14,13 +11,7 @@ const Header = ({
   section4Ref,
   section5Ref,
 }) => {
-  const [show, setShow] = useState(false);
   const [isOpen, toggleOpen] = useCycle(false, true);
-  const router = useRouter();
-
-  const handleNavigate = (url) => {
-    router.push(`${url}`);
-  };
 
   return (
     <div className="flex justify-center pt-[40px] relative">

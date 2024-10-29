@@ -18,9 +18,7 @@ const menuItems = ['Contact', 'Experience', 'About', 'Certificate', 'Projects'];
 export const Navigation = () => (
   <motion.ul variants={variants}>
     {menuItems.map((i, index) => (
-      <div className="relative" key={index}>
-        <MenuItem i={i} key={i} />
-      </div>
+      <MenuItem i={i} key={i} />
     ))}
   </motion.ul>
 );

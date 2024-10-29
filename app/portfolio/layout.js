@@ -28,7 +28,7 @@ const Layout = ({ children }) => {
   );
   return (
     <div className="flex justify-center items-center min-h-screen bg-[#24272C]">
-      <section className=" w-[96%] bg-[#232732] rounded-3xl outer-shadow">
+      <div className=" w-[96%] bg-[#232732] rounded-3xl outer-shadow">
         <Header
           handleScroll={handleScroll}
           section1Ref={section1Ref}
@@ -39,7 +39,7 @@ const Layout = ({ children }) => {
         />
 
         <div>{childrenWithProps}</div>
-      </section>
+      </div>
     </div>
   );
 };

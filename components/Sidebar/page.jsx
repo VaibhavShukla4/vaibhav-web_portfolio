@@ -1,10 +1,10 @@
 /** @format */
 'use client';
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useDimension } from '@/components/useDimension/page';
-import { MenuToggle } from '../MenuToggle/page';
-import { Navigation } from '../Navigation/page';
+import { MenuToggle } from '@/components/MenuToggle/page';
+import { Navigation } from '@/components/Navigation/page';
 const Sidebar = ({ isOpen, toggle }) => {
   const containerRef = useRef(null);
 
@@ -14,22 +14,6 @@ const Sidebar = ({ isOpen, toggle }) => {
     posX: '90%', // default position X
     posY: '65px', // default position Y
   });
-
-  const updateDimensions = () => {
-    const width = typeof window !== 'undefined' ? window.innerWidth : 0;
-    const radius = width < 768 ? 20 : 30;
-    const posX = width < 768 ? '85%' : '90%';
-    setSidebarSize({ radius, posX, posY: '65px' });
-  };
-
-  // Effect hook for handling resize events with cleanup
-  // useEffect(() => {
-  //   if (typeof window !== 'undefined') {
-  //     window.addEventListener('resize', updateDimensions);
-  //     updateDimensions(); // Also set initial size correctly after mounting
-  //     return () => window.removeEventListener('resize', updateDimensions);
-  //   }
-  // }, []);
 
   const sidebarVariants = {
     open: (height = 1000) => ({

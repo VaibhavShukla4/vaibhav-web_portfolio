@@ -1,7 +1,12 @@
 /** @format */
+'use client'
+import dynamic from 'next/dynamic';
 
-
-import CursorFollower from './../components/CursorFollower/index';
+// Dynamically import the CursorFollower component and disable SSR for it
+const CursorFollower = dynamic(() => import('@/components/CursorFollower/index'), {
+  ssr: false, // Disable server-side rendering for this component
+  loading: () => <div>Loading...</div>, // Optional loading state while the component is loading
+});
 
 export default function Home() {
   return (

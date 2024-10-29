@@ -38,7 +38,7 @@ const page = ({
   const [formate, setFormate] = useState(false);
 
   return (
-    <>
+    <div>
       <div className="flex flex-col items-center justify-center pt-24 pb-[40px] overflow-auto">
         <div className="profile-shadow">
           <Image
@@ -49,21 +49,21 @@ const page = ({
             height={Profile.height}
           />
         </div>
-        <h5
+        <span
           className={`${poppins.className} text-white leading-12 tracking-wide text-[30px] pt-[20px]`}
         >
           Hey
-        </h5>
-        <h3
+        </span>
+        <span
           className={`${poppins.className} text-center text-white font-bold leading-12 tracking-wide text-[50px] pt-[20px]`}
         >
           I’m Vaibhav Shukla
-        </h3>
-        <h5
+        </span>
+        <span
           className={`${poppins.className} text-center text-white leading-8 tracking-wide text-[30px] pt-[20px]`}
         >
           Full Stack <span className="text-[#D32D20]">Developer |</span>
-        </h5>
+        </span>
         <p
           className={`${poppins.className} text-white leading-6 tracking-wide text-[20px] pt-[20px] text-center px-[40px] w-[80vw]`}
         >
@@ -74,12 +74,7 @@ const page = ({
         </p>
         <div className="flex justify-center pt-8">
           <div className="flex gap-x-[40px] gap-y-[40px]">
-            <button
-              // href="#section1"
-              // passHref
-              // scroll={false}
-              className="shadow-btn "
-            >
+            <button className="shadow-btn ">
               <span>Learn More</span>
             </button>
             <Link
@@ -108,9 +103,9 @@ const page = ({
               />
             </div>
             <div className="w-[474px] max-[1024px]:w-[50vw] max-[767px]:w-[80vw]">
-              <h4 className={`text-white ${poppins.className} text-[24px]`}>
+              <span className={`text-white ${poppins.className} text-[24px]`}>
                 About me
-              </h4>
+              </span>
               <p className={`text-white ${poppins.className} `}>
                 Currently, I work as a Full Stack Web Developer at Nrich
                 Learning Pvt. Ltd. in Chandigarh. Here, I collaborate with a
@@ -124,9 +119,9 @@ const page = ({
         </div>
         <div className="flex justify-center" ref={section3Ref} id="#section3">
           <div className="w-[70vw] max-[767px]:w-[90vw]">
-            <h4 className={`text-white ${poppins.className} text-[24px]`}>
+            <span className={`text-white ${poppins.className} text-[24px]`}>
               Projects
-            </h4>
+            </span>
             <div className="w-full flex py-[20px] rounded-lg">
               <div className="bg-[#7733FF] w-[70%] h-2"></div>
               <div className="bg-[#F7A21E] w-[30%] h-2"></div>
@@ -176,11 +171,11 @@ const page = ({
                     height={Todo.height}
                   />
                 </div>
-                <h4
+                <span
                   className={`text-white text-center ${poppins.className} font-medium text-3xl max-[525px]:text-2xl max-[425px]:text-lg`}
                 >
                   Content Analyzer
-                </h4>
+                </span>
                 <p className="text-center text-white font-light text-xl max-[525px]:text-[17px] max-[425px]:text-[12px]">
                   A robust tool designed for content creators, bloggers, and
                   writers
@@ -198,11 +193,11 @@ const page = ({
         </div>
         <div className="flex justify-center pt-8">
           <div className="w-[70vw]">
-            <h4
+            <span
               className={`text-white ${poppins.className} text-[24px] text-end`}
             >
               Skills
-            </h4>
+            </span>
             <div className="w-full flex py-[20px] rounded-lg">
               <div className="bg-[#7733FF] w-[70%] h-2"></div>
               <div className="bg-[#F7A21E] w-[30%] h-2"></div>
@@ -221,9 +216,9 @@ const page = ({
           id="#section4"
         >
           <div className="w-[70vw]">
-            <h4 className={`text-white poppins text-[24px] `}>
+            <span className={`text-white poppins text-[24px] `}>
               Certifications
-            </h4>
+            </span>
             <div className="w-full flex py-[20px] rounded-lg">
               <div className="bg-[#7733FF] w-[70%] h-2"></div>
               <div className="bg-[#F7A21E] w-[30%] h-2"></div>
@@ -234,9 +229,9 @@ const page = ({
           </div>
         </div>
         <div className="w-[70vw]" ref={section2Ref} id="section2">
-          <h4 className={`text-white poppins text-[24px] text-end`}>
+          <span className={`text-white poppins text-[24px] text-end`}>
             Experience
-          </h4>
+          </span>
           <div className="w-full flex py-[20px] rounded-lg">
             <div className="bg-[#7733FF] w-[70%] h-2"></div>
             <div className="bg-[#F7A21E] w-[30%] h-2"></div>
@@ -264,12 +259,12 @@ const page = ({
               <div className="flex flex-col gap-x-8 gap-12 w-[90%] max-[1380px]:w-full">
                 <div className="flex  justify-start w-full max-[1380px]:justify-end">
                   <div className="experiance-shadow w-[380px] rounded-2xl p-5 opacity-50">
-                    <h4 className="text-white font-semibold text-[20px] ">
+                    <span className="text-white font-semibold text-[20px] ">
                       Full Stack Developer
-                    </h4>
-                    <h5 className="text-white font-semibold pt-2">
+                    </span>
+                    <span className="text-white font-semibold pt-2">
                       Nrich Learning Pvt. Ltd | 07/2023 - Present
-                    </h5>
+                    </span>
                     <p className="text-white  pt-2">
                       •Developed and maintained web applications using
                       JavaScript, React.js, Next.js, and Node.js, resulting in a
@@ -285,12 +280,12 @@ const page = ({
                 </div>
                 <div className="flex justify-end w-full ">
                   <div className="experiance-shadow w-[380px] rounded-2xl p-5 opacity-50">
-                    <h4 className="text-white font-semibold text-[20px] ">
+                    <span className="text-white font-semibold text-[20px] ">
                       Frontend Developer (ReactJs)
-                    </h4>
-                    <h5 className="text-white font-semibold pt-2">
+                    </span>
+                    <span className="text-white font-semibold pt-2">
                       App Knit Pvt. Ltd | 08/2022 - 12/2022
-                    </h5>
+                    </span>
                     <p className="text-white  pt-2">
                       •Started my tech career here and, in my role as a React.js
                       Frontend Developer, dedicated to crafting intuitive,
@@ -330,12 +325,12 @@ const page = ({
               <div className="flex flex-col gap-x-8 gap-12 w-[90%] max-[1380px]:w-full">
                 <div className="flex  justify-start w-full max-[1380px]:justify-end">
                   <div className="experiance-shadow w-[380px] rounded-2xl p-5 opacity-50">
-                    <h4 className="text-white font-semibold text-[20px] ">
+                    <span className="text-white font-semibold text-[20px] ">
                       Frontend Developement (Career Training)
-                    </h4>
-                    <h5 className="text-white font-semibold pt-2">
+                    </span>
+                    <span className="text-white font-semibold pt-2">
                       Relevel | 01/2022 - 12/2022
-                    </h5>
+                    </span>
                     <p className="text-white  pt-2">
                       •Learned Frontend Development including JavaScript, HTML,
                       CSS, and React.js, completing over 200 hours of hands-on
@@ -351,13 +346,13 @@ const page = ({
                 </div>
                 <div className="flex justify-end w-full ">
                   <div className="experiance-shadow w-[380px] rounded-2xl p-5 opacity-50">
-                    <h4 className="text-white font-semibold text-[20px] ">
+                    <span className="text-white font-semibold text-[20px] ">
                       Bachelor of Engineer (Mining)
-                    </h4>
-                    <h5 className="text-white font-semibold pt-2">
+                    </span>
+                    <span className="text-white font-semibold pt-2">
                       Jawahar Lal Nehru College of Technology | 09/2012 -
                       06/2016
-                    </h5>
+                    </span>
                     <p className="text-white  pt-2">
                       Mine Design and Planning: Develop detailed plans for the
                       layout and operation of mines, including the location of
@@ -386,9 +381,9 @@ const page = ({
           )}
         </div>
         <div className="w-[70vw]" ref={section1Ref} id="section1">
-          <h4 className={`text-white poppins text-[24px] text-start`}>
+          <span className={`text-white poppins text-[24px] text-start`}>
             Contact Me
-          </h4>
+          </span>
           <div className="w-full flex py-[20px] rounded-lg">
             <div className="bg-[#7733FF] w-[70%] h-2"></div>
             <div className="bg-[#F7A21E] w-[30%] h-2"></div>
@@ -423,7 +418,7 @@ const page = ({
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
