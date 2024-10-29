@@ -1,7 +1,11 @@
 /** @format */
 'use client';
 import React, { useRef, MutableRefObject, ReactNode, ReactElement } from 'react';
-import Header from '@/components/Header/page';
+import dynamic from 'next/dynamic';
+const Header = dynamic(() => import('@/components/Header/page'), {
+  ssr: false, // Disable server-side rendering for this component
+  loading: () => <div>Loading...</div>, // Optional loading state while the component is loading
+});
 
 interface LayoutProps {
   children: ReactNode;
