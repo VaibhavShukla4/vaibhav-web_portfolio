@@ -1,17 +1,21 @@
 /** @format */
-'use client'
+'use client';
+
 import dynamic from 'next/dynamic';
+import { FC } from 'react';
 
 // Dynamically import the CursorFollower component and disable SSR for it
-const CursorFollower = dynamic(() => import('@/components/CursorFollower/index'), {
+const CursorFollower = dynamic(() => import('@/components/CursorFollower'), {
   ssr: false, // Disable server-side rendering for this component
   loading: () => <div>Loading...</div>, // Optional loading state while the component is loading
 });
 
-export default function Home() {
+const Home: FC = () => {
   return (
-    <main className="relative h-[100%] w-[100%]">
+    <main className="relative h-full w-full">
       <CursorFollower />
     </main>
   );
-}
+};
+
+export default Home;

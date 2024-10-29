@@ -3,8 +3,8 @@
 import React from 'react';
 import Layout from './layout';
 
-const Portfolio = () => {
-  return <Layout></Layout>;
+const Portfolio: React.FC = () => {
+  return <Layout />;
 };
 
 export default Portfolio;
