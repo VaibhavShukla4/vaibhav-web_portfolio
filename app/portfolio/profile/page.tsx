@@ -1,7 +1,7 @@
 /** @format */
 'use client';
 import Image from 'next/image';
-import React, { MutableRefObject, useState } from 'react';
+import React, {  useState } from 'react';
 import Profile from './../../../public/assets/laptop.png';
 import Ai from './../../../public/assets/boy.png';
 import Boy from './../../../public/assets/boys.png';
@@ -24,23 +24,8 @@ import Languages from './../../../components/Languages/page';
 import { poppins } from './../../../app/constant';
 import Link from 'next/link';
 
-// Define the interface for the props
-interface PageProps {
-  handleScroll: (ref: MutableRefObject<HTMLDivElement | null>) => void;
-  section1Ref: MutableRefObject<HTMLDivElement | null>;
-  section2Ref: MutableRefObject<HTMLDivElement | null>;
-  section3Ref: MutableRefObject<HTMLDivElement | null>;
-  section4Ref: MutableRefObject<HTMLDivElement | null>;
-  section5Ref: MutableRefObject<HTMLDivElement | null>;
-}
 
-const Page: React.FC<PageProps> = ({
-  handleScroll,
-  section1Ref,
-  section2Ref,
-  section3Ref,
-  section4Ref,
-  section5Ref,
+const Page = ({
 }) => {
   const images = [Linkedin, Relevel, Scaler];
   const languages = [Next, ReactJs, Vue, Node, Tailwind, Css, Html, Javascript];
@@ -92,13 +77,12 @@ const Page: React.FC<PageProps> = ({
               scroll={false}
               className="shadow-btn "
             >
-              <span onClick={() => handleScroll(section1Ref)}>Contact me</span>
+              {/* <span onClick={() => handleScroll(section1Ref)}>Contact me</span> */}
             </Link>
           </div>
         </div>
         <div
           className="flex max-[1024px]:w-full justify-center items-center px-[40px] py-[40px] min-h-[750px]"
-          ref={section5Ref}
           id="#section5"
         >
           <div className="flex max-[1024px]:w-full max-[1024px]:flex-col justify-center gap-y-[5vw] gap-x-[5vw] items-center">
@@ -126,7 +110,7 @@ const Page: React.FC<PageProps> = ({
             </div>
           </div>
         </div>
-        <div className="flex justify-center" ref={section3Ref} id="#section3">
+        <div className="flex justify-center"  id="#section3">
           <div className="w-[70vw] max-[767px]:w-[90vw]">
             <span className={`text-white ${poppins.className} text-[24px]`}>
               Projects
@@ -221,7 +205,6 @@ const Page: React.FC<PageProps> = ({
         </div>
         <div
           className="flex justify-center pt-8"
-          ref={section4Ref}
           id="#section4"
         >
           <div className="w-[70vw]">
@@ -237,7 +220,7 @@ const Page: React.FC<PageProps> = ({
             </div>
           </div>
         </div>
-        <div className="w-[70vw]" ref={section2Ref} id="section2">
+        <div className="w-[70vw]"  id="section2">
           <span className={`text-white poppins text-[24px] text-end`}>
             Experience
           </span>
@@ -389,7 +372,7 @@ const Page: React.FC<PageProps> = ({
             </div>
           )}
         </div>
-        <div className="w-[70vw]" ref={section1Ref} id="section1">
+        <div className="w-[70vw]"  id="section1">
           <span className={`text-white poppins text-[24px] text-start`}>
             Contact Me
           </span>
@@ -431,4 +414,4 @@ const Page: React.FC<PageProps> = ({
   );
 };
 
-export default Page;
+export default React.memo(Page);

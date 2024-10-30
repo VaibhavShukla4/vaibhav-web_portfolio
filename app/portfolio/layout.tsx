@@ -1,6 +1,6 @@
 /** @format */
 'use client';
-import React, { useRef, MutableRefObject, ReactNode, ReactElement } from 'react';
+import React, { useRef, RefObject, ReactNode, ReactElement } from 'react';
 import Header from './../../components/Header/page';
 
 interface LayoutProps {
@@ -16,7 +16,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   const section5Ref = useRef<HTMLElement | null>(null);
 
   // Typing handleScroll to take a MutableRefObject of HTMLElement or null
-  const handleScroll = (ref: MutableRefObject<HTMLElement | null>) => {
+  const handleScroll = (ref: RefObject<HTMLElement | null>) => {
     if (ref.current) {
       ref.current.scrollIntoView({ behavior: 'smooth' });
     }

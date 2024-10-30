@@ -4,10 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { poppins } from './../../app/constant';
 
-// Define the prop types
-interface MenuItemProps {
-  i: number; // The index number passed as a prop
-}
+
 
 const variants = {
   open: {
@@ -26,8 +23,11 @@ const variants = {
   },
 };
 
-
-export const MenuItem: React.FC<MenuItemProps> = ({ i }) => {
+interface MenuItemProps {
+  index: number;  // The index
+  name: string;   // The actual menu item name (like 'Contact', 'Experience', etc.)
+}
+export const MenuItem: React.FC<MenuItemProps> = ({  name}) => {
  
   return (
     <motion.li
@@ -39,7 +39,7 @@ export const MenuItem: React.FC<MenuItemProps> = ({ i }) => {
       <span
         className={`background_Image w-[fit-content] transition delay-150 duration-300 ease-in-out hover:uppercase ${poppins.className}`}
       >
-        {i}
+        {name}
       </span>
     </motion.li>
   );

@@ -1,13 +1,11 @@
-/** @format */
-
-export const throttle = (func, delay) => {
+export const throttle = <T extends (...args: unknown[]) => void>(func: T, delay: number): (...args: Parameters<T>) => void => {
   let lastCall = 0;
-  return (...args) => {
+  return (...args: Parameters<T>) => {
     const now = new Date().getTime();
     if (now - lastCall < delay) {
       return;
     }
     lastCall = now;
-    return func(...args);
+    func(...args);
   };
 };
