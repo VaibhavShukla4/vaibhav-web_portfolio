@@ -20,7 +20,7 @@ const menuItems: string[] = ['Contact', 'Experience', 'About', 'Certificate', 'P
 export const Navigation: React.FC = () => (
   <motion.ul variants={variants}>
     {menuItems.map((item, index) => (
-      <MenuItem i={item} key={index} /> 
+      <MenuItem key={index} index={index} name={item} /> 
     ))}
   </motion.ul>
 );

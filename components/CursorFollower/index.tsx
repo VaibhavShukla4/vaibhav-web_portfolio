@@ -1,11 +1,11 @@
 /** @format */
 'use client';
 
-import React, { useState, MouseEvent } from 'react';
+import React, { useState, MouseEvent as ReactMouseEvent } from 'react';
 import Pages from './../../app/pages/Index';
 
 // Custom throttle function with TypeScript
-const throttle = <T extends (...args: unknown[]) => unknown>(func: T, delay: number): (...args: Parameters<T>) => void => {
+const throttle = <T extends (...args: any[]) => void>(func: T, delay: number): (...args: Parameters<T>) => void => {
   let lastCall = 0;
   return (...args: Parameters<T>) => {
     const now = new Date().getTime();
@@ -23,7 +23,7 @@ const CursorFollower: React.FC = () => {
   const [isClicked, setIsClicked] = useState<boolean>(false);
 
   // Throttled version of handleMouseMove
-  const handleMouseMove = throttle((e: MouseEvent<HTMLDivElement>) => {
+  const handleMouseMove = throttle((e: ReactMouseEvent<HTMLDivElement>) => {
     setPosition({
       x: e.clientX,
       y: e.clientY,

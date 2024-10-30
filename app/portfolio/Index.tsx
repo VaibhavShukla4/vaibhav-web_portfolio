@@ -1,12 +1,15 @@
-import React from 'react';
-import Layout from './../../app/portfolio/layout';
+/** @format */
 
-const Portfolio: React.FC = () => {
+import React from 'react'; // Remove useRef if it's not used
+import Layout from './../../app/portfolio/layout';
+import Profile from './../../app/portfolio/profile/page';
+
+const Index: React.FC = () => {
   return (
     <Layout>
-      <div>Portfolio content goes here</div>
+      <Profile />
     </Layout>
   );
 };
 
-export default Portfolio;
+export default Index;
