@@ -431,4 +431,4 @@ const Page: React.FC<PageProps> = ({
   );
 };
 
-export default React.memo(Page);
+export default Page;
