@@ -29,7 +29,7 @@ interface MenuItemProps {
   name: string;   // The actual menu item name (like 'Contact', 'Experience', etc.)
 }
 
-export const MenuItem: React.FC<MenuItemProps> = ({ index, name }) => {
+export const MenuItem: React.FC<MenuItemProps> = ({  name }) => {
   return (
     <motion.li
       variants={variants}
