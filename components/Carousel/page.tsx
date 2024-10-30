@@ -2,8 +2,8 @@
 'use client';
 import Image from 'next/image';
 import React, { useState } from 'react';
-import Left from '@/public/assets/svg/left.svg';
-import Right from '@/public/assets/svg/right.svg';
+import Left from './../../public/assets/svg/left.svg';
+import Right from './../../public/assets/svg/right.svg';
 
 // Define the interface for the image type
 interface ImageType {

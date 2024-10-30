@@ -2,7 +2,7 @@
 'use client';
 
 import React, { useState, MouseEvent } from 'react';
-import Pages from '@/app/pages/Index';
+import Pages from './../../app/pages/Index';
 
 // Custom throttle function with TypeScript
 const throttle = <T extends (...args: unknown[]) => unknown>(func: T, delay: number): (...args: Parameters<T>) => void => {

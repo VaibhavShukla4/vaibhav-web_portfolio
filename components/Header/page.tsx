@@ -1,6 +1,6 @@
 /** @format */
 import React, { MutableRefObject } from 'react';
-import Sidebar from '@/components/Sidebar/page';
+import Sidebar from './../Sidebar/page';
 import { useCycle } from 'framer-motion';
 import Link from 'next/link';
 
