@@ -41,7 +41,7 @@ const Page: React.FC<PageProps> = ({
   section3Ref,
   section4Ref,
   section5Ref,
-}): JSX.Element => {
+}) => {
   const images = [Linkedin, Relevel, Scaler];
   const languages = [Next, ReactJs, Vue, Node, Tailwind, Css, Html, Javascript];
   const [formate, setFormate] = useState<boolean>(false);
