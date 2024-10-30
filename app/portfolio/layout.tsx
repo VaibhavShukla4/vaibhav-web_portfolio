@@ -1,7 +1,7 @@
 /** @format */
 'use client';
 import React, { useRef, MutableRefObject, ReactNode, ReactElement } from 'react';
-import Header from '@/components/Header/page';
+import Header from './../../components/Header/page';
 
 interface LayoutProps {
   children: ReactNode;
