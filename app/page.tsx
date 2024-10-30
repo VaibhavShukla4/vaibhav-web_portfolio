@@ -2,9 +2,8 @@
 'use client';
 
 import { FC } from 'react';
-
 // Dynamically import the CursorFollower component and disable SSR for it
-import CursorFollower from './../components/CursorFollower/index';
+import CursorFollower from '@/components/CursorFollower/index';
 
 
 const Home: FC = () => {
