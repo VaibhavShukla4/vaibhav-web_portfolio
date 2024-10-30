@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MenuItem } from '@/components/MenuItem/page';
+import { MenuItem } from './../MenuItem/page';
 
 const variants = {
   open: {

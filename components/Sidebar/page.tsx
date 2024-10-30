@@ -2,9 +2,9 @@
 'use client';
 import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
-import { useDimension } from '@/components/useDimension/page';
-import { MenuToggle } from '@/components/MenuToggle/page';
-import { Navigation } from '@/components/Navigation/page';
+import { useDimension } from './../useDimension/page';
+import { MenuToggle } from './../MenuToggle/page';
+import { Navigation } from './../Navigation/page';
 
 // Define the prop types for Sidebar
 interface SidebarProps {

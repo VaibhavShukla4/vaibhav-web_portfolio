@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { poppins } from '@/app/constant';
+import { poppins } from './../../app/constant';
 
 // Define the prop types
 interface MenuItemProps {
