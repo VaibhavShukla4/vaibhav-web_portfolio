@@ -2,7 +2,7 @@
 'use client';
 
 import React, { useState, MouseEvent as ReactMouseEvent } from 'react';
-import Pages from '../../app/pages/index';
+import Pages from '../../app/Pages/index';
 
 // Custom throttle function with specific type
 const throttle = (func: (e: ReactMouseEvent<HTMLDivElement>) => void, delay: number) => {
