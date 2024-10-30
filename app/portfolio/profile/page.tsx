@@ -430,4 +430,4 @@ const Page: React.FC<PageProps> = ({
   );
 };
 
-export default Page;
+export default React.memo(Page);
