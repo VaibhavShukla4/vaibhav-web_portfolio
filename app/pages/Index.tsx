@@ -6,14 +6,14 @@ import Profile from './../../app/portfolio/profile/page';
 
 const Index: React.FC = () => {
   // Create refs for sections
-  const section1Ref = useRef<HTMLElement | null>(null);
-  const section2Ref = useRef<HTMLElement | null>(null);
-  const section3Ref = useRef<HTMLElement | null>(null);
-  const section4Ref = useRef<HTMLElement | null>(null);
-  const section5Ref = useRef<HTMLElement | null>(null);
+  const section1Ref = useRef<HTMLDivElement | null>(null);
+  const section2Ref = useRef<HTMLDivElement | null>(null);
+  const section3Ref = useRef<HTMLDivElement | null>(null);
+  const section4Ref = useRef<HTMLDivElement | null>(null);
+  const section5Ref = useRef<HTMLDivElement | null>(null);
 
   // Handle scrolling
-  const handleScroll = (ref: MutableRefObject<HTMLElement | null>) => {
+  const handleScroll = (ref: MutableRefObject<HTMLDivElement | null>) => {
     if (ref.current) {
       ref.current.scrollIntoView({ behavior: 'smooth' });
     }
