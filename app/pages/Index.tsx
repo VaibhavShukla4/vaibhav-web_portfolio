@@ -4,7 +4,7 @@ import React from 'react';
 import Layout from '../portfolio/layout';
 import Profile from '../portfolio/profile/page';
 
-const Pages: React.FC = () => {
+const Page: React.FC = () => {
   // Create refs for sections
 
   return (
@@ -16,4 +16,4 @@ const Pages: React.FC = () => {
   );
 };
 
-export default Pages;
+export default Page;
