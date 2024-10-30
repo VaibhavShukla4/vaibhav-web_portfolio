@@ -1,18 +1,19 @@
 /** @format */
 'use client';
+
 import React, { useState, MouseEvent } from 'react';
 import Pages from '@/app/pages/Index';
 
 // Custom throttle function with TypeScript
-const throttle = (func: (...args: any[]) => void, delay: number) => {
+const throttle = <T extends (...args: unknown[]) => unknown>(func: T, delay: number): (...args: Parameters<T>) => void => {
   let lastCall = 0;
-  return (...args: any[]) => {
+  return (...args: Parameters<T>) => {
     const now = new Date().getTime();
     if (now - lastCall < delay) {
       return;
     }
     lastCall = now;
-    return func(...args);
+    func(...args);
   };
 };
 

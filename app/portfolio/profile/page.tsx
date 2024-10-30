@@ -1,7 +1,7 @@
 /** @format */
 'use client';
 import Image from 'next/image';
-import React, { MutableRefObject, useRef, useState } from 'react';
+import React, { MutableRefObject, useState } from 'react';
 import Profile from '@/public/assets/laptop.png';
 import Ai from '@/public/assets/boy.png';
 import Boy from '@/public/assets/boys.png';
@@ -42,7 +42,7 @@ const Page: React.FC<PageProps> = ({
   section4Ref,
   section5Ref,
 }) => {
- const images = [Linkedin, Relevel, Scaler];
+  const images = [Linkedin, Relevel, Scaler];
   const languages = [Next, ReactJs, Vue, Node, Tailwind, Css, Html, Javascript];
   const [formate, setFormate] = useState<boolean>(false);
   return (
@@ -75,10 +75,11 @@ const Page: React.FC<PageProps> = ({
         <p
           className={`${poppins.className} text-white leading-6 tracking-wide text-[20px] pt-[20px] text-center px-[40px] w-[80vw]`}
         >
-          Hello there! 👋 I'm Vaibhav Shukla, a dedicated Full Stack Web
+          Hello there! 👋 I&apos;m Vaibhav Shukla, a dedicated Full Stack Web
           Developer with over 2 year of experience in the dynamic world of
           Information Technology. My passion for technology drives me to create
-          innovative web solutions and push the boundaries of what's possible.
+          innovative web solutions and push the boundaries of what&apos;s
+          possible.
         </p>
         <div className="flex justify-center pt-8">
           <div className="flex gap-x-[40px] gap-y-[40px]">

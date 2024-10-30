@@ -3,8 +3,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { poppins } from '@/app/constant';
-import Avenger from '@/public/assets/download.gif';
-import Image from 'next/image';
 
 // Define the prop types
 interface MenuItemProps {
@@ -28,14 +26,9 @@ const variants = {
   },
 };
 
-const colors = ['#FF008C', '#D309E1', '#9C1AFF', '#7700FF', '#4400FF'];
 
 export const MenuItem: React.FC<MenuItemProps> = ({ i }) => {
-  // Define the style for the border based on the index
-  const style = {
-    border: `2px solid ${colors[i]}`,
-  };
-
+ 
   return (
     <motion.li
       variants={variants}

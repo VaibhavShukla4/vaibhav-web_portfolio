@@ -1,6 +1,6 @@
 /** @format */
 'use client';
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { useDimension } from '@/components/useDimension/page';
 import { MenuToggle } from '@/components/MenuToggle/page';
@@ -16,12 +16,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggle }) => {
   const containerRef = useRef<HTMLElement | null>(null); // Typing useRef for HTMLElement
 
   // Define the type for sidebarSize state
-  const [sidebarSize, setSidebarSize] = useState({
-    radius: 30, // default radius
-    posX: '90%', // default position X
-    posY: '65px', // default position Y
-  });
-
+ 
   const sidebarVariants = {
     open: (height = 1000) => ({
       clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
