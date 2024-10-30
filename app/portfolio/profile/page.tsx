@@ -24,7 +24,6 @@ import Languages from './../../../components/Languages/page';
 import { poppins } from './../../../app/constant';
 import Link from 'next/link';
 
-// Define the interface for the props
 interface PageProps {
   handleScroll: (ref: MutableRefObject<HTMLDivElement | null>) => void;
   section1Ref: MutableRefObject<HTMLDivElement | null>;
