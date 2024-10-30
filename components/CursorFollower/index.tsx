@@ -4,7 +4,7 @@
 import React, { useState, MouseEvent as ReactMouseEvent } from 'react';
 import Pages from '@/app/pages/Index';
 
-// Custom throttle function with specific type
+// Custom throttle function
 const throttle = (func: (e: ReactMouseEvent<HTMLDivElement>) => void, delay: number) => {
   let lastCall = 0;
   return (e: ReactMouseEvent<HTMLDivElement>) => {
@@ -18,11 +18,9 @@ const throttle = (func: (e: ReactMouseEvent<HTMLDivElement>) => void, delay: num
 };
 
 const CursorFollower: React.FC = () => {
-  // Typing the position state as an object with x and y properties
   const [position, setPosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
   const [isClicked, setIsClicked] = useState<boolean>(false);
 
-  // Throttled version of handleMouseMove
   const handleMouseMove = throttle((e: ReactMouseEvent<HTMLDivElement>) => {
     setPosition({
       x: e.clientX,
@@ -39,7 +37,7 @@ const CursorFollower: React.FC = () => {
 
   return (
     <div
-      className="relative"
+      className="relative cursor-none" // Add cursor-none to hide default cursor
       onMouseMove={handleMouseMove}
       onClick={handleMouseClick}
     >

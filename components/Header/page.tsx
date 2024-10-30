@@ -24,6 +24,7 @@ const Header: React.FC<HeaderProps> = ({
 }) => {
   const [isOpen, toggleOpen] = useCycle(false, true);
 
+  
   return (
     <div className="flex justify-center pt-[40px] relative">
       <div className="flex justify-between items-center flex-wrap gap-x-[40px] gap-y-[40px] max-[991px]:hidden">

@@ -77,7 +77,9 @@ const Page = ({
               scroll={false}
               className="shadow-btn "
             >
-              {/* <span onClick={() => handleScroll(section1Ref)}>Contact me</span> */}
+              <span
+              //  onClick={() => handleScroll(section1Ref)}
+                >Contact me</span>
             </Link>
           </div>
         </div>
@@ -372,7 +374,7 @@ const Page = ({
             </div>
           )}
         </div>
-        <div className="w-[70vw]"  id="section1">
+        <div className="w-[70vw] mt-[70px]"  id="section1">
           <span className={`text-white poppins text-[24px] text-start`}>
             Contact Me
           </span>
@@ -393,15 +395,15 @@ const Page = ({
               </div>
               <div className="flex justify-center flex-col gap-y-6">
                 <input
-                  className="input-shadow h-[60px] w-[400px] rounded-lg text-white px-6"
+                  className="input-shadow h-[60px] min-w-[320px] rounded-lg text-white px-6"
                   placeholder="Name*"
                 />
                 <input
-                  className="input-shadow h-[60px] w-[400px] rounded-lg text-white px-6"
+                  className="input-shadow h-[60px] min-w-[320px] rounded-lg text-white px-6"
                   placeholder="Email ID*"
                 />
                 <textarea
-                  className="input-shadow h-[200px] w-[400px] rounded-lg text-white px-6 pt-6"
+                  className="input-shadow h-[200px] min-w-[320px] rounded-lg text-white px-6 pt-6"
                   placeholder="Message*"
                 />
                 <button className="project-btn">Send</button>
