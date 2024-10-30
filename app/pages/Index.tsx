@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useRef, MutableRefObject } from 'react';
+import React, { useRef } from 'react';
 import Layout from './../../app/portfolio/layout';
 import Profile from './../../app/portfolio/profile/page';
 
@@ -13,7 +13,7 @@ const Index: React.FC = () => {
   const section5Ref = useRef<HTMLDivElement | null>(null);
 
   // Handle scrolling
-  const handleScroll = (ref: MutableRefObject<HTMLDivElement | null>) => {
+  const handleScroll = (ref: React.RefObject<HTMLDivElement>): void => {
     if (ref.current) {
       ref.current.scrollIntoView({ behavior: 'smooth' });
     }

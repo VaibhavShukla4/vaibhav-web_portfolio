@@ -33,14 +33,14 @@ interface PageProps {
   section4Ref: RefObject<HTMLElement>;
   section5Ref: RefObject<HTMLElement>;
 }
-const Page = ({
+const Page: React.FC<PageProps> = ({
   handleScroll,
   section1Ref,
   section2Ref,
   section3Ref,
   section4Ref,
   section5Ref,
-}: PageProps) => {
+}) => {
   const images = [Linkedin, Relevel, Scaler];
   const languages = [Next, ReactJs, Vue, Node, Tailwind, Css, Html, Javascript];
   const [formate, setFormate] = useState<boolean>(false);
