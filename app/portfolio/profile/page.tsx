@@ -1,7 +1,7 @@
 /** @format */
 'use client';
 import Image from 'next/image';
-import React, { MutableRefObject, useState } from 'react';
+import React, {  useState, RefObject } from 'react';
 import Profile from './../../../public/assets/laptop.png';
 import Ai from './../../../public/assets/boy.png';
 import Boy from './../../../public/assets/boys.png';
@@ -26,14 +26,13 @@ import Link from 'next/link';
 
 // Define the interface for the props
 interface PageProps {
-  handleScroll: (ref: MutableRefObject<HTMLDivElement | null>) => void;
-  section1Ref: MutableRefObject<HTMLDivElement | null>;
-  section2Ref: MutableRefObject<HTMLDivElement | null>;
-  section3Ref: MutableRefObject<HTMLDivElement | null>;
-  section4Ref: MutableRefObject<HTMLDivElement | null>;
-  section5Ref: MutableRefObject<HTMLDivElement | null>;
+  handleScroll: (ref: RefObject<HTMLElement>) => void;
+  section1Ref: RefObject<HTMLElement>;
+  section2Ref: RefObject<HTMLElement>;
+  section3Ref: RefObject<HTMLElement>;
+  section4Ref: RefObject<HTMLElement>;
+  section5Ref: RefObject<HTMLElement>;
 }
-
 const Page = ({
   handleScroll,
   section1Ref,
