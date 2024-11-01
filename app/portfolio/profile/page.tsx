@@ -1,12 +1,17 @@
 /** @format */
 'use client';
 import Image from 'next/image';
-import React, {  useState } from 'react';
+import dynamic from 'next/dynamic'; // Ensure this import is correct
+import React, { useState, useEffect } from 'react';
+import Todo from './../../../public/assets/cartoon-drawing-phone-with-pen-pen-with-pen-it_1274269-119776.avif';
+import Weather from './../../../public/assets/sunny-rainy-cloudy-day-weather-forecast-icon-illustration_47987-10695.avif';
+import Trade from './../../../public/assets/The-Role-of-English-in-International-Trade.webp';
+import Portfolio from './../../../public/assets/how-to-make-an-online-portfolio.png';
+import Commarce from './../../../public/assets/ecommerce3-1.jpg';
+import { poppins } from '@/app/constant';
 import Profile from './../../../public/assets/laptop.png';
 import Ai from './../../../public/assets/boy.png';
 import Boy from './../../../public/assets/boys.png';
-import Todo from './../../../public/assets/todo.png';
-import Git from './../../../public/assets/svg/git.svg';
 import Linkedin from './../../../public/assets/linkedin.png';
 import Relevel from './../../../public/assets/relevel.png';
 import Scaler from './../../../public/assets/scaler.png';
@@ -21,15 +26,86 @@ import Html from './../../../public/assets/html.png';
 import Javascript from './../../../public/assets/js.png';
 import Logo from './../../../public/assets/logo.png';
 import Languages from './../../../components/Languages/page';
-import { poppins } from './../../../app/constant';
 import Link from 'next/link';
+// import Projects from '../projects/page';
 
+type Project = {
+  src: string;
+  alt: string;
+  title: string;
+  description: string;
+  url: string;
+};
 
-const Page = ({
+type ProjectData = {
+  [key: string]: Project[];
+};
+
+const Page: React.FC = ({
 }) => {
   const images = [Linkedin, Relevel, Scaler];
   const languages = [Next, ReactJs, Vue, Node, Tailwind, Css, Html, Javascript];
-  const [formate, setFormate] = useState<boolean>(false);
+  const [formate, setFormate] = useState<boolean>(true);
+
+  const projects: ProjectData = {
+    React: [
+      {
+        src: Weather.src,
+        alt: 'todo-react',
+        title: 'Weather App',
+        description: 'A simple Weather app built with React and Forecast Rest Api.',
+        url: 'https://66efda9422edb768c0ad7c65--vocal-medovik-9a553c.netlify.app/',
+      },
+      {
+        src: Todo.src,
+        alt: 'todo-react',
+        title: 'Todo Notes App',
+        description: 'A simple Todo Notes app built with MERN.',
+        url: 'https://649858b7fd42ee1705c84135--sage-lokum-6ea901.netlify.app/',
+      },
+      {
+        src: Trade.src,
+        alt: 'todo-react',
+        title: 'Trade Communication App',
+        description: 'A simple Trade Communication app built with MERN.',
+        url: 'https://goclocktransport.netlify.app/',
+      },
+    ],
+    Next: [
+      {
+        src: Portfolio.src,
+        alt: 'todo-next',
+        title: 'Portfolio',
+        description: 'Portfolio Using Next Js and Tailwind',
+        url: 'https://vaibhav-webportfolio.vercel.app/',
+      }, {
+        src: Commarce.src,
+        alt: 'todo-next',
+        title: 'E Commarce',
+        description: 'E Commarce Using Next Js and Tailwind',
+        url: 'https://ecommarcewebportal.vercel.app/',
+      },
+    ],
+    Vue: [
+      {
+        src: Todo.src,
+        alt: 'todo-vue',
+        title: 'Vue Task Tracker',
+        description: 'A task tracker built with Vue.js.',
+        url: 'https://example.com/vue-task-tracker',
+      },
+    ],
+  };
+
+  // Set initial state to React's first project
+  const [selectedTech, setSelectedTech] = useState<string>('React');
+  const [selectedProject, setSelectedProject] = useState<Project>(projects['React'][0]);
+
+  // Update selected project to the first project whenever selectedTech changes
+  useEffect(() => {
+    setSelectedProject(projects[selectedTech][0]);
+  }, [selectedTech]);
+  console.log(selectedProject)
   return (
     <div>
       <div className="flex flex-col items-center justify-center pt-24 pb-[40px] overflow-auto">
@@ -79,7 +155,7 @@ const Page = ({
             >
               <span
               //  onClick={() => handleScroll(section1Ref)}
-                >Contact me</span>
+              >Contact me</span>
             </Link>
           </div>
         </div>
@@ -112,7 +188,7 @@ const Page = ({
             </div>
           </div>
         </div>
-        <div className="flex justify-center"  id="#section3">
+        <div className="flex justify-center" id="#section3">
           <div className="w-[70vw] max-[767px]:w-[90vw]">
             <span className={`text-white ${poppins.className} text-[24px]`}>
               Projects
@@ -121,67 +197,60 @@ const Page = ({
               <div className="bg-[#7733FF] w-[70%] h-2"></div>
               <div className="bg-[#F7A21E] w-[30%] h-2"></div>
             </div>
-            <div className="flex flex-wrap justify-between items-center  max-[767px]:justify-center gap-x-6 gap-y-6 w-full py-8">
-              <button className="project-btn">React</button>
-              <button className="project-btn">Next</button>
-              <button className="project-btn">Vue</button>
-            </div>
-            <div className="flex max-[991px]:flex-col-reverse gap-y-8 gap-x-8 justify-evenly items-center">
-              <div className="flex flex-col max-[991px]:flex-row justify-between gap-y-8 gap-x-8 max-[425px]:gap-x-4">
-                <div className="logo-shadow w-[190px] max-[991px]:max-w-[135px] max-[991px]:w-full">
-                  <Image
-                    className="rounded-full "
-                    src={Todo.src}
-                    alt="todo"
-                    width={Todo.width}
-                    height={Todo.height}
-                  />
-                </div>
-                <div className="logo-shadow w-[190px] max-[991px]:max-w-[135px] max-[991px]:w-full">
-                  <Image
-                    className="rounded-full"
-                    src={Todo.src}
-                    alt="todo"
-                    width={Todo.width}
-                    height={Todo.height}
-                  />
-                </div>
-                <div className="logo-shadow w-[190px] max-[991px]:max-w-[135px] max-[991px]:w-full">
-                  <Image
-                    className="rounded-full"
-                    src={Todo.src}
-                    alt="todo"
-                    width={Todo.width}
-                    height={Todo.height}
-                  />
-                </div>
+            <div>
+              <div className="flex flex-wrap justify-between items-center max-[767px]:justify-center gap-x-6 gap-y-6 w-full py-8">
+                <button className="project-btn" onClick={() => setSelectedTech('React')}>React</button>
+                <button className="project-btn" onClick={() => setSelectedTech('Next')}>Next</button>
+                <button className="project-btn" onClick={() => setSelectedTech('Vue')}>Vue</button>
               </div>
-              <div className="content-details p-8 gap-y-6 max-[525px]:p-6 max-[425px]:p-4 max-[525px]:gap-y-4 max-[425px]:gap-y-2">
-                <div className="h-[340px] max-[525px]:h-[250px] max-[425px]:h-[200px]">
-                  <Image
-                    className="rounded-lg h-full"
-                    src={Todo.src}
-                    alt="todo"
-                    width={Todo.width}
-                    height={Todo.height}
-                  />
+
+              <div className="flex max-[991px]:flex-col-reverse gap-y-8 gap-x-8 justify-evenly items-center">
+                <div className="flex flex-col max-[991px]:flex-row justify-between gap-y-8 gap-x-8 max-[425px]:gap-x-4">
+                  {projects[selectedTech].map((project, index) => (
+                    <div
+                      key={index}
+                      className="logo-shadow w-[190px] max-[991px]:max-w-[135px] max-[991px]:w-full cursor-pointer"
+                      onClick={() => setSelectedProject(project)}
+                    >
+                      <Image
+                        className="rounded-full aspect-[1/1]"
+                        src={project.src}
+                        alt={project.alt}
+                        width={Todo.width}
+                        height={Todo.height}
+                      />
+                    </div>
+                  ))}
                 </div>
-                <span
-                  className={`text-white text-center ${poppins.className} font-medium text-3xl max-[525px]:text-2xl max-[425px]:text-lg`}
-                >
-                  Content Analyzer
-                </span>
-                <p className="text-center text-white font-light text-xl max-[525px]:text-[17px] max-[425px]:text-[12px]">
-                  A robust tool designed for content creators, bloggers, and
-                  writers
-                </p>
-                <Image
-                  className="w-14 max-[525px]:w-10 max-[425px]:w-6"
-                  src={Git.src}
-                  alt="Git"
-                  width={Git.width}
-                  height={Git.height}
-                />
+
+                {/* Show selected project details */}
+                {selectedProject && (
+                  <div className="content-details p-8 gap-y-6 max-[525px]:p-6 max-[425px]:p-4 max-[525px]:gap-y-4 max-[425px]:gap-y-2">
+                    <div className="h-[340px] max-[525px]:h-[250px] max-[425px]:h-[200px]">
+                      <Image
+                        className="rounded-lg h-full"
+                        src={selectedProject.src}
+                        alt={selectedProject.alt}
+                        width={Todo.width}
+                        height={Todo.height}
+                      />
+                    </div>
+                    <span
+                      className={`text-white text-center whitespace-nowrap text-ellipsis w-[-webkit-fill-available] overflow-hidden ${poppins.className} font-medium text-3xl max-[525px]:text-2xl max-[425px]:text-lg`}
+                    >
+                      {selectedProject.title}
+                    </span>
+                    <p className="text-center text-white font-light text-xl max-[525px]:text-[17px] max-[425px]:text-[12px] whitespace-nowrap text-ellipsis w-[-webkit-fill-available] overflow-hidden">
+                      {selectedProject.description}
+                    </p>
+                    <button
+                      className="shadow-btn"
+                      onClick={() => window.open(selectedProject.url, '_blank', 'noopener noreferrer')}
+                    >
+                      View Website
+                    </button>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -222,7 +291,7 @@ const Page = ({
             </div>
           </div>
         </div>
-        <div className="w-[70vw]"  id="section2">
+        <div className="w-[70vw]" id="section2">
           <span className={`text-white poppins text-[24px] text-end`}>
             Experience
           </span>
@@ -374,7 +443,7 @@ const Page = ({
             </div>
           )}
         </div>
-        <div className="w-[70vw] mt-[70px]"  id="section1">
+        <div className="w-[70vw] mt-[70px]" id="section1">
           <span className={`text-white poppins text-[24px] text-start`}>
             Contact Me
           </span>

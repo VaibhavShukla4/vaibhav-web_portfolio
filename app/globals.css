@@ -195,9 +195,12 @@ nav {
 }
 
 .background {
-  /* position: relative; */
+  position: fixed;
   width: -webkit-fill-available;
   height: 100vh;
+  backdrop-filter: blur(15px);
+  z-index: 11;
+  background: transparent;
 }
 
 .cursor-follower {

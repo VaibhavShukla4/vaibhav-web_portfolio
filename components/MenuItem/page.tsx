@@ -38,7 +38,7 @@ export const MenuItem: React.FC<MenuItemProps> = ({  name }) => {
       className="relative list-none"
     >
       <span
-        className={`background_Image inline-block transition-transform duration-300 ease-in-out hover:uppercase ${poppins.className}`}
+        className={`background_Image mx-auto inline-block transition-transform duration-300 ease-in-out hover:uppercase ${poppins.className}`}
       >
         {name}
       </span>
