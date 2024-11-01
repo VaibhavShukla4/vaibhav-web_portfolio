@@ -34,6 +34,8 @@ type Project = {
   title: string;
   description: string;
   url: string;
+  dev:boolean;
+  comming:boolean;
 };
 
 type ProjectData = {
@@ -54,6 +56,8 @@ const Page: React.FC = ({
         title: 'Weather App',
         description: 'A simple Weather app built with React and Forecast Rest Api.',
         url: 'https://66efda9422edb768c0ad7c65--vocal-medovik-9a553c.netlify.app/',
+        dev:false,
+        comming:false,
       },
       {
         src: Todo.src,
@@ -61,6 +65,8 @@ const Page: React.FC = ({
         title: 'Todo Notes App',
         description: 'A simple Todo Notes app built with MERN.',
         url: 'https://649858b7fd42ee1705c84135--sage-lokum-6ea901.netlify.app/',
+        dev: false,
+        comming: false
       },
       {
         src: Trade.src,
@@ -68,6 +74,8 @@ const Page: React.FC = ({
         title: 'Trade Communication App',
         description: 'A simple Trade Communication app built with MERN.',
         url: 'https://goclocktransport.netlify.app/',
+        dev: false,
+        comming: false
       },
     ],
     Next: [
@@ -75,14 +83,18 @@ const Page: React.FC = ({
         src: Portfolio.src,
         alt: 'todo-next',
         title: 'Portfolio',
-        description: 'Portfolio Using Next Js and Tailwind',
+        description: 'Portfolio Using Next Js and Tailwind Phase Dev.',
         url: 'https://vaibhav-webportfolio.vercel.app/',
+        dev: true,
+        comming: false
       }, {
         src: Commarce.src,
         alt: 'todo-next',
         title: 'E Commarce',
-        description: 'E Commarce Using Next Js and Tailwind',
+        description: 'E Commarce Using Next Js and Tailwind Phase Dev.',
         url: 'https://ecommarcewebportal.vercel.app/',
+        dev: true,
+        comming: false
       },
     ],
     Vue: [
@@ -92,6 +104,8 @@ const Page: React.FC = ({
         title: 'Vue Task Tracker',
         description: 'A task tracker built with Vue.js.',
         url: 'https://example.com/vue-task-tracker',
+        dev: false,
+        comming: true
       },
     ],
   };
@@ -225,7 +239,7 @@ const Page: React.FC = ({
                 {/* Show selected project details */}
                 {selectedProject && (
                   <div className="content-details p-8 gap-y-6 max-[525px]:p-6 max-[425px]:p-4 max-[525px]:gap-y-4 max-[425px]:gap-y-2">
-                    <div className="h-[340px] max-[525px]:h-[250px] max-[425px]:h-[200px]">
+                    <div className="h-[340px] max-[525px]:h-[250px] max-[425px]:h-[200px] relative">
                       <Image
                         className="rounded-lg h-full"
                         src={selectedProject.src}
@@ -233,6 +247,8 @@ const Page: React.FC = ({
                         width={Todo.width}
                         height={Todo.height}
                       />
+                      {selectedProject.dev &&<span className='absolute bg-red-500 text-white top-[10px] right-[10px] px-[10px] py-[4px] rounded-sm '>Development Phase</span>}
+                      {selectedProject.comming &&<span className='absolute bg-yellow-400 text-white top-[10px] right-[10px] px-[10px] py-[4px] rounded-sm '>Up Comming</span>}
                     </div>
                     <span
                       className={`text-white text-center whitespace-nowrap text-ellipsis w-[-webkit-fill-available] overflow-hidden ${poppins.className} font-medium text-3xl max-[525px]:text-2xl max-[425px]:text-lg`}
