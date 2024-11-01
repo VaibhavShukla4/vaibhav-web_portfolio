@@ -1,7 +1,6 @@
 /** @format */
 'use client';
 import Image from 'next/image';
-import dynamic from 'next/dynamic'; // Ensure this import is correct
 import React, { useState, useEffect } from 'react';
 import Todo from './../../../public/assets/cartoon-drawing-phone-with-pen-pen-with-pen-it_1274269-119776.avif';
 import Weather from './../../../public/assets/sunny-rainy-cloudy-day-weather-forecast-icon-illustration_47987-10695.avif';
