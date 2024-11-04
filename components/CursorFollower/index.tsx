@@ -53,7 +53,7 @@ const CursorFollower: React.FC = () => {
 
   return (
     <div
-      className={`relative ${isLargeScreen ? 'cursor-none' : ''}`} // Apply cursor-none only for large screens
+      className={`relative`} // Apply cursor-none only for large screens
       onMouseMove={isLargeScreen ? handleMouseMove : undefined}
       onClick={isLargeScreen ? handleMouseClick : undefined}
     >
